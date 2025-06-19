@@ -1,0 +1,390 @@
+/* styles.css */
+   @media (max-width: 600px) {
+     .navbar ul {
+       flex-direction: column;
+       align-items: flex-start;
+     }
+     .desc-content h1 {
+       font-size: 1.5em;
+     }
+     /* Add more rules as needed */
+     .glassbox-title {
+    font-size: 2rem;
+  }
+   }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+ }
+
+
+ .navbar {
+ background: rgba(246, 255, 248, 0.38);
+ backdrop-filter: blur(16px) saturate(160%);
+ -webkit-backdrop-filter: blur(16px) saturate(160%);
+ box-shadow: 0 1px 8px rgba(28, 139, 71, 0.13);
+ position: sticky;
+ top: 0.5rem;                /* Move navbar a little down from the very top */
+ z-index: 1000;
+ border-bottom: 1.5px solid rgba(28, 139, 71, 0.15);
+ border-radius: 18px;        /* Add circular edges */
+ margin: 0 auto;
+ width: calc(100% - 3rem);   /* Leave space for border-radius on both sides */
+ max-width: 1200px;          /* Optional: match nav-container max-width */
+ left: 0;
+ right: 0;
+}
+
+
+ .nav-container {
+  display :flex;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+ }
+
+
+ .logo {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #333;
+  text-decoration: none;
+ }
+
+
+ .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+ }
+
+
+ .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+ }
+
+
+ .nav-links a:hover {
+  color: #1c8b47;
+ }
+
+
+ .nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #006400;
+  transition: width 0.3s ease;
+ }
+
+
+ .nav-links a:hover::after {
+  width: 100%;
+ }
+
+
+ .desc {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 90vh;
+ text-align: center;
+ padding: 0 1.5rem;
+ background-color: #f8f8f8;
+}
+.desc2 {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 35vh;
+ text-align: center;
+ background-color: #f8f8f8;
+ margin-top: -50vh; /* Slides section up */
+ padding-top: 2vh;  /* Optional: adjust content spacing */
+}
+
+.desc-content {
+ max-width: 600px;
+}
+
+
+.desc h1 {
+ font-size: 2.5rem;
+ line-height: 1.3;
+ margin-bottom: 1rem;
+ font-weight: 700;
+}
+.desc2 h1 {
+ font-size: 2.5rem;
+ line-height: 1.3;
+ margin-bottom: 1rem;
+ font-weight: 700;
+}
+
+.desc p {
+ font-size: 1.125rem;
+ color: #555;
+ margin-bottom: 2rem;
+}
+.desc2 p {
+ font-size: 1.125rem;
+ color: #555;
+ margin-bottom: 2rem;
+}
+.desc-content {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: opacity 1s ease, transform 1s ease;
+}
+
+.desc-content.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+
+.context-list {
+ list-style: none;
+ padding: 0;
+}
+
+.objbox {
+ background: rgba(246, 255, 248, 0.38); /* Green-tinted glassy background */
+ backdrop-filter: blur(16px) saturate(160%);
+ -webkit-backdrop-filter: blur(16px) saturate(160%);
+ border-radius: 8px;
+ box-shadow: 0 1px 8px rgba(28, 139, 71, 0.13);
+ padding: 1rem;
+ text-align: center;
+ transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+ flex: 1 1 250px;
+ max-width: 500px;
+}
+
+.context {
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ gap: 1rem;
+ margin-top: 2rem;
+ flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+ padding: 0 1rem;
+}
+
+.objbox:hover {
+ transform: scale(1.02);
+}
+
+.fade-panel {
+ opacity: 0;
+ transform: scale(1.05);
+ transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-panel.visible {
+ opacity: 1;
+ transform: scale(1);
+}
+
+.button {
+ background: linear-gradient(90deg, #006400, #1c8b47, #006400);
+ background-size: 200% 100%;
+ color: white;
+ display: inline-block;
+ padding: 0.75rem 2.5rem;
+ border: none;
+ border-radius: 8px;
+ text-decoration: none;
+ font-weight: bold;
+ transition: background-position 0.4s, transform 0.3s cubic-bezier(.4,0,.2,1);
+ width: fit-content;
+ margin: 1.5rem auto 2.5rem auto; /* Increased bottom margin */
+ text-align: center;
+ cursor: pointer;
+}
+.button:hover {
+ background-position: 100% 0;
+ box-shadow: 0 4px 20px rgba(28, 139, 71, 0.25);
+ transform: scale(1.2);
+}
+
+.button2 {
+ background: linear-gradient(90deg, #006400, #1c8b47, #006400);
+ background-size: 200% 100%;
+ color: white;
+ display: inline-block;
+ padding: 0.75rem 2.5rem;
+ border: none;
+ border-radius: 8px;
+ text-decoration: none;
+ font-weight: bold;
+ transition: background-position 0.4s, transform 0.3s cubic-bezier(.4,0,.2,1);
+ width: fit-content;
+ margin: 1rem auto 1rem auto; 
+ text-align: center;
+ cursor: pointer;
+}
+.button2:hover {
+ background-position: 100% 0;
+ box-shadow: 0 4px 20px rgba(28, 139, 71, 0.25);
+ transform: scale(1.2);
+}
+
+
+.footer {
+  background: #343736;
+  color: #fff;
+  border-top: none;
+  margin: 0 auto;
+  max-width: 100vw;
+  width: 100vw;
+  padding: 0.4rem 1rem; /* Smaller vertical and horizontal padding */
+  text-align: center;
+  font-size: 0.75rem; /* Smaller font */
+  line-height: 1.2; /* Tighter line spacing */
+  position: static;
+  z-index: 100;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.footer p {
+  margin: 0.25rem 0; /* Less vertical margin between lines */
+  color: #fff;
+}
+
+
+ #hook {
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+ }
+
+.panel {
+ height: 110vh;
+ background-size: cover;
+ background-position: center;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.panel .content {
+ color: white;
+ font-size: 2.5rem;
+ font-weight: 600;
+ text-shadow: 0 0 10px #000;
+ text-align: center;
+ max-width: 80%;
+}
+
+.parallax {
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+ height: 110vh;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transform: scale(1.05);
+ transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+ transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.parallax.visible {
+ opacity: 1;
+ transform: scale(1);
+}
+
+.parallax .content {
+ color: white;
+ font-size: 2.5rem;
+ font-weight: 600;
+ text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+ text-align: center;
+ max-width: 80%;
+ padding: 0 1rem;
+}
+body {
+ margin: 0;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+ background-color: #f8f8f8;
+ overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+.panel::before {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: inherit;
+ opacity: 0.5; /* Adjust for stronger/weaker color */
+ z-index: 1;
+ pointer-events: none;
+}
+.panel .content {
+ position: relative;
+ z-index: 2;
+}
+.panel-forest {
+ background-color: #3a5d3c; /* Deep forest green */
+}
+.panel-mountain {
+ background-color: #7a8fa3; /* Muted blue/gray for mountains */
+}
+.panel-fuji {
+ background-color: #bfcad6; /* Soft blue/gray for Fuji */
+}
+.panel-flowers {
+ background-color: #e9c6d1; /* Light pink for flowers */
+}
+.author {
+ text-align: center;
+ font-size: 1.5rem;
+ color: #ffffff;
+ margin: 1rem auto 1rem auto;
+}
+
+.glassbox {
+  background: rgba(246, 255, 248, 0.38);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-radius: 18px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(28, 139, 71, 0.13);
+  z-index: 2;
+  position: relative;
+  color: #ffffff;
+  transition: background-position 0.4s, transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.glassbox:hover {
+  transform: scale(1.05);
+  
+}
+.glassbox-title {
+  font-size: 2.8rem;     /* Bigger title */
+  font-weight: 700;      /* Bold */
+  line-height: 1.3;
+  margin: 1rem auto 1rem auto;
+  color: #fff;           /* Keep white for visibility over background */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: better contrast */
+}

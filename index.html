@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMetric</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+     <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.4em;">
+  <img src="logo.png" alt="EcoMetric Logo" style="height: 2.5em; width: auto; vertical-align: middle; margin-right: 0.3em;" />
+  EcoVera (Beta)
+</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ecoscore.html">EcoScore</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <br>
+  <header class="desc">
+    <div class="desc-container">
+      <div class="desc-content">
+        <h1>
+          <span style="color:#1c8b47"><b>Track <i>Today</i>.</b></span>
+          <br>
+          <span style="color:#006400"><b>Improve <i>Tomorrow</i>.</b></span>
+        </h1>
+        <p>Your journey towards a sustainable lifestyle starts here.</p>
+        <div class="context">
+          <ul class="context-list">
+            <li><p class="objbox">1. You answer a few questions.</p></li>
+            <li><p class="objbox">2. We calculate your environmental impact.</p></li>
+            <li><p class="objbox">3. You get personalized tips to improve.</p></li>
+          </ul>
+        </div>
+        <div style="text-align: center; margin-top: 1rem;">
+          <button class="button" type="button" onclick="document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });">
+            Scroll Down to Explore
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SCROLL GALLERY -->
+  <div id="explore" class="scroll-gallery">
+    <div class="scroll-gallery">
+      <section class="panel parallax panel-forest" style="background-image: url('forest.jpg');">
+        <div class="content">
+          “We won’t have a society if we destroy the environment.”
+          <br>
+          <p class="author">- Margaret Mead</p>
+        </div>
+      </section>
+      <section class="panel parallax panel-mountain" style="background-image: url('mountain.jpg');">
+        <div class="content">
+          “What we do to the Earth, we do to ourselves.”
+          <br>
+          <p class="author">- Chief Seattle</p>
+        </div>
+      </section>
+      <section class="panel parallax panel-fuji" style="background-image: url('fuji.jpg');">
+        <div class="content">
+          “Be the change you wish to see in the world.”
+          <br>
+          <p class="author">- Mahatma Gandhi</p>
+        </div>
+      </section>
+      <section class="panel parallax panel-flowers" style="background-image: url('flowers.jpg');">
+        <div class="content">
+          “Small acts, when multiplied, can transform the world.”
+          <br>
+          <p class="author">- Howard Zinn</p>
+        </div>
+      </section>
+      <section class="panel parallax panel-flowers" style="background-image: url('blur.jpg');">
+  <div class="glassbox">
+    <h1 class="glassbox-title">
+      <span font-size: 3.5rem style="color:#ffffff"><b>Do Your Part <i>Today</i>.</b></span>
+      <br>
+      <span style="color:#ffffff"><b>Shape a Cleaner <i>Tomorrow</i>.</b></span>
+    </h1> 
+    <p class="author">
+      Every action counts in the fight against climate change. Track your daily habits, reduce your carbon emissions, and join a community committed to building a sustainable future. Start making a difference—one step at a time.
+    </p>
+    <a href="#" class="button2" onclick="getUserName()">Get Started</a>
+  </div>
+</section>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION SECTION -->
+  <!--<section class="desc2" style="margin: 2rem auto; max-width: 700px; color: #1a2e05;">
+    <div class="desc-container">
+      <div class="desc-content visible" class="desc-content" style="text-align: center; color: #1a2e05;">
+        <h1>
+          <span style="color:#1c8b47"><b>Do Your Part <i>Today</i>.</b></span>
+          <br>
+          <span style="color:#006400"><b>Shape a <i>Cleaner Tomorrow</i>.</b></span>
+        </h1>
+        <p style="margin-top: 1rem;">
+          Every action counts in the fight against climate change. Track your daily habits, reduce your carbon emissions, and join a community committed to building a sustainable future. Start making a difference—one step at a time.
+        </p>
+      </div>
+    </div>
+  </section> --> 
+
+  <!-- IMAGE -->
+
+
+  <!-- GET STARTED BUTTON 
+  <div style="text-align: center;">
+    <a href="ecoscore.html" class="button">Get Started</a>
+  </div> -->
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Ecometric. All rights reserved.</p>
+    <p>🌿 EcoMetric is dedicated to helping you understand and reduce your environmental impact. Join us in making a difference!</p>
+    <p>Built with ❤️ by Bhargav & Ananth</p>
+  </footer>
+
+  <!-- JS LIBRARIES & SCROLL EFFECT -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Animate header and all desc-content sections
+      const headerObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      });
+
+      document.querySelectorAll('.desc-content').forEach(el => headerObserver.observe(el));
+
+      // Animate parallax panels
+      const panelObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, {
+        threshold: 0.4
+      });
+
+      document.querySelectorAll('.parallax').forEach(panel => {
+        panelObserver.observe(panel);
+      });
+    });
+
+    
+    
+  </script>
+  <script>
+  function getUserName() {
+    let userName = prompt("Please enter your name:");
+
+    if (userName && userName.trim() !== "") {
+      userName = userName.trim();
+      // Save to cookie (expires in 30 days)
+      document.cookie = "ecoUserName=" + encodeURIComponent(userName) + "; path=/; max-age=" + (30 * 24 * 60 * 60);
+      
+      // Optionally, store in local JS variable (can be used in the same session)
+      sessionStorage.setItem("ecoUserName", userName);
+
+      // Redirect to ecoscore.html
+      window.location.href = "ecoscore.html";
+    } else {
+      alert("Please enter a valid name to continue.");
+    }
+  }
+</script>
+</body>
+
+</html>

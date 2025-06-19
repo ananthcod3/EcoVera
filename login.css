@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 350px;
+  filter: drop-shadow(0 15px 50px #006400);
+  animation: rotating 4s linear infinite;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.box:hover {
+  width: 450px;
+  height: 500px;
+}
+
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #1c8b47 0%,
+    #1c8b47 5%,
+    transparent 5%,
+    transparent 40%,
+    #1c8b47 50%
+  );
+  filter: drop-shadow(0 15px 50px #006400);
+  border-radius: 20px;
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #1c2b1c;
+  border-radius: 15px;
+  border: 8px solid #006400;
+}
+
+.login {
+  position: absolute;
+  inset: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  background: rgba(28, 139, 71, 0.2);
+  z-index: 1000;
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  color: #fff;
+  overflow: hidden;
+}
+
+.box:hover .login {
+  inset: 40px;
+}
+
+.loginBx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  transition: 0.5s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.box:hover .loginBx {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #006400;
+  color: #fff;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  margin: 0 auto 20px auto;
+  font-size: 1.3em;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(28,139,71,0.2);
+  gap: 10px;
+}
+
+.loginBx h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  font-weight: 700;
+
+}
+
+.loginBx h2 i,
+.login-title i {
+  color: #006400;
+  text-shadow: 0 0 5px #1c8b47, 0 0 30px #1c8b47;
+}
+
+.loginBx input {
+background: linear-gradient(90deg, #006400, #1c8b47, #006400);
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.loginBx input::placeholder {
+  color: #999;
+}
+
+.loginBx input[type="submit"] {
+  background: #1c8b47;
+  border: none;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.loginBx input[type="submit"]:hover {
+  box-shadow: 0 0 10px #1c8b47, 0 0 60px #1c8b47;
+}
+
+.group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.group a {
+  color: #1c8b47;
+  text-decoration: none;
+}
+
+.group a:nth-child(2) {
+  color: #006400;
+  font-weight: 600;
+}
+
+
+.button {
+  background: linear-gradient(90deg, #006400, #1c8b47, #006400);
+  background-size: 200% 100%;
+  color: white;
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-position 0.4s, transform 0.3s cubic-bezier(.4,0,.2,1);
+  width: fit-content;/* Increased bottom margin */
+  text-align: center;
+  cursor: pointer;
+}
+.button:hover {
+  background-position: 100% 0;
+  box-shadow: 0 4px 20px rgba(28, 139, 71, 0.25);
+  transform: scale(1.05);
+}
+.button2{
+    transition: background-position 0.4s, transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+.button2:hover {
+    background-position: 100% 0;
+  box-shadow: 0 4px 20px rgba(28, 139, 71, 0.25);
+  transform: scale(1.05);
+}
+
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 3rem;
+  background-color: #f8f8f8;
+  padding: 2rem;
+}
+
+.desc-content {
+  max-width: 400px;
+  text-align: left;
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.desc {
+  display: none;
+}
+
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 5rem;
+  background: linear-gradient(120deg, #f8f8f8 60%, #e8f5ee 100%);
+  padding: 2rem;
+}
+
+.desc-content {
+  max-width: 440px;
+  text-align: left;
+  opacity: 1;
+  transform: none;
+  transition: none;
+  padding: 2rem 1rem;
+}
+
+
+
+.track-today {
+  color: #1c8b47;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+.improve-tomorrow {
+  color: #006400;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+.desc-sub {
+  font-size: 1.15rem;
+  color: #444;
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.brand {
+  color: #1c8b47;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .desc-content {
+    padding: 1rem 0.5rem;
+    max-width: 100%;
+    text-align: center;
+  }
+  .apple-heading {
+    font-size: 2rem;
+  }
+  .track-today, .improve-tomorrow {
+    font-size: 1.7rem;
+  }
+}
+

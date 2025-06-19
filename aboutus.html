@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoMetric</title>
+  <link rel="stylesheet" href="aboutstyle.css" />
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+       <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.4em;">
+  <img src="logo.png" alt="EcoMetric Logo" style="height: 2.5em; width: auto; vertical-align: middle; margin-right: 0.3em;" />
+  EcoVera (Beta)
+</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ecoscore.html">EcoScore</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+<header class="desc">
+  <div class="desc-content"></div>
+  <br>
+  <h1>Meet the Founders</h1>
+</header>
+<div class="about-section">
+  <div class="about-profiles">
+    <div class="profile-box animate-on-scroll">
+      <img src="Ananth.jpeg" alt="Ananth" class="lowered">
+      <div class="profile-name">Ananth Karthic</div>
+      <p class="profile-description">Ananth is a driven student and passionate coder with a strong interest in cybersecurity and computer science. He enjoys applying his technical skills to real-world challenges, especially those related to the environment. Dedicated to creating innovative tools, he aims to help people better understand and reduce their ecological footprint by combining his love for technology and sustainability.</p>
+    </div>
+    <div class="profile-box animate-on-scroll">
+      <img src="Bhargav.jpeg" alt="Bhargav">
+      <div class="profile-name">Bhargav Malyala</div>
+      <p class="profile-description">Bhargav is a driven student and passionate coder with a strong interest in environmental issues and sustainability. He enjoys applying technical skills to real-world problems that help people understand their impact. Dedicated to creating innovative tools, he aims to empower individuals to reduce their ecological footprint by combining a love for coding with environmental advocacy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Purpose Section -->
+<div class="purpose-section animate-on-scroll">
+  <h2 class="tabsection">Our Purpose</h2>
+  <p class="tabsection">
+    Our website helps users understand and track their ecological footprint by measuring their daily environmental impact. It empowers individuals to make informed choices for a more sustainable lifestyle and contribute to global conservation efforts.
+  </p>
+</div>
+
+<!-- Goal Section -->
+<div class="goal-section animate-on-scroll">
+  <h2 class="tabsection">Our Goal</h2>
+  <p class="tabsection">
+    Our goal is to raise awareness about ecological footprints within our community and engage users to actively monitor and reduce their environmental impact. By building a strong local network, we aim to inspire collective action toward sustainability.
+  </p>
+</div>
+<div class="goal-section animate-on-scroll">
+  <h2 class="tabsection">Support Us</h2>
+  <a href="https://www.instagram.com/ecometrichq" target="_blank" style="text-decoration: none; color: inherit;">
+  <p class="tabsection">
+    <img src="Instagram.png" alt="Instagram Logo" class="insta-logo" />
+    Follow us on Instagram
+  </p>
+</a>
+</div>
+<br>
+<br>
+<footer class="footer">
+      <p>© 2025 Ecometric. All rights reserved.</p>
+      <p>🌿 EcoMetric is dedicated to helping you understand and reduce your environmental impact. Join us in making a difference!</p>
+      <p>Built with ❤️ by Bhargav & Ananth</p>
+   </footer>
+   
+<script>
+  // Some code I found online to animate elements on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        entry.target.classList.remove('in-view');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMetric</title>
+  <link rel="stylesheet" href="ecostyle.css">
+</head>
+<body onload="displayUserName()">
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.4em;">
+  <img src="logo.png" alt="EcoMetric Logo" style="height: 2.5em; width: auto; vertical-align: middle; margin-right: 0.3em;" />
+  EcoVera (Beta)
+</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ecoscore.html">EcoScore</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  
+  <!-- Bubble popup -->
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 3rem; position:relative;">
+  <h1 id="welcomeMessage"></h1>
+  <br>
+  <div class="ecoscore-circle" id="scoreCircle" tabindex="0">
+    --
+    <div class="bubble-popup" id="bubblePopup"></div>
+    <div class="bubble-popup2" id="bubblePopup2">
+      <span id="eco-tips" style="font: size 0.95em; color:#1c8b47;"><b>Eco Tips Available After You've Taken Survey</b></span>
+    </div>
+  </div>
+</div>
+</div>
+    
+    <details class = "faq">
+      <summary>What is an EcoScore?</summary>
+      <div>
+        Your EcoScore measures your environmental impact based on your lifestyle habits, such as transportation, energy use, and consumption. It’s not about being perfect, but about understanding where you stand and taking steps toward a greener future.
+      </div>
+    </details>
+   <details class = "faq">
+      <summary>How is EcoScore Calculated?</summary>
+      <div> 
+        On the survey, each answer has a score, with lower numbers showing more eco-friendly choices and higher numbers showing less sustainable ones. The total score shows how much impact a person has on the environment. A higher score means more harm to the planet, while a lower score means a smaller environmental footprint. Each section, such as transportation, home energy, and diet, reflects daily habits that affect carbon emissions, water use, waste, and energy consumption.
+      </div>
+    </details>
+    <div style="text-align: center; margin-top: 1rem;">
+      <button class="button" type="button" onclick="document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });">
+        Click Here to Update Your EcoScore
+      </button>
+    </div>
+  <div class="parallax-survey-bg">
+  <div id="explore" class="survey-container">
+    <form id = "ecoForm">
+      <h2>🌍 Ecometric Survey</h2>
+      <hr>
+      <h3>🚗 Transportation</h3>
+      <label class="survey-question">1. What is your primary mode of transportation?</label>
+      <div class="option-row"><input type="radio" id="transport-gas" name="transport" value="gas" data-points="4"><label for="transport-gas">Car (gas/diesel)</label></div>
+      <div class="option-row"><input type="radio" id="transport-hybrid" name="transport" value="hybrid" data-points="3"><label for="transport-hybrid">Car (hybrid)</label></div>
+      <div class="option-row"><input type="radio" id="transport-electric" name="transport" value="electric" data-points="2"><label for="transport-electric">Car (electric)</label></div>
+      <div class="option-row"><input type="radio" id="transport-public" name="transport" value="public" data-points="1"><label for="transport-public">Public transport</label></div>
+      <div class="option-row"><input type="radio" id="transport-bike" name="transport" value="bike" data-points="0"><label for="transport-bike">Bike/Walk</label></div>
+      <label class="survey-question">2. How often do you fly per year?</label>
+      <div class="option-row"><input type="radio" id="flights-never" name="flights" value="never" data-points="0"><label for="flights-never">Never</label></div>
+      <div class="option-row"><input type="radio" id="flights-1-2" name="flights" value="1-2" data-points="2"><label for="flights-1-2">1–2 short flights</label></div>
+      <div class="option-row"><input type="radio" id="flights-3-5" name="flights" value="3-5" data-points="4"><label for="flights-3-5">3–5 flights</label></div>
+      <div class="option-row"><input type="radio" id="flights-5plus" name="flights" value="5+" data-points="6"><label for="flights-5plus">More than 5 flights</label></div>
+      <label class="survey-question">3. Do you carpool or use rideshare?</label>
+      <div class="option-row"><input type="radio" id="carpool-regularly" name="carpool" value="regularly" data-points="0"><label for="carpool-regularly">Regularly</label></div>
+      <div class="option-row"><input type="radio" id="carpool-occasionally" name="carpool" value="occasionally" data-points="1"><label for="carpool-occasionally">Occasionally</label></div>
+      <div class="option-row"><input type="radio" id="carpool-never" name="carpool" value="never" data-points="2"><label for="carpool-never">Never</label></div>
+      <h3>🏡 Home Energy Use</h3>
+      <label class="survey-question">4. What kind of energy powers your home?</label>
+      <div class="option-row"><input type="radio" id="energy-renewable" name="energy" value="renewable" data-points="0"><label for="energy-renewable">Renewable (solar, wind, etc.)</label></div>
+      <div class="option-row"><input type="radio" id="energy-mostly-renewable" name="energy" value="mostly-renewable" data-points="1"><label for="energy-mostly-renewable">Mostly renewable</label></div>
+      <div class="option-row"><input type="radio" id="energy-mixed" name="energy" value="mixed" data-points="2"><label for="energy-mixed">Mixed/unsure</label></div>
+      <div class="option-row"><input type="radio" id="energy-fossil" name="energy" value="fossil" data-points="3"><label for="energy-fossil">Fossil fuels</label></div>
+      <label class="survey-question">5. How often do you turn off lights/devices when not in use?</label>
+      <div class="option-row"><input type="radio" id="lights-always" name="lights" value="always" data-points="0"><label for="lights-always">Always</label></div>
+      <div class="option-row"><input type="radio" id="lights-sometimes" name="lights" value="sometimes" data-points="1"><label for="lights-sometimes">Sometimes</label></div>
+      <div class="option-row"><input type="radio" id="lights-rarely" name="lights" value="rarely" data-points="2"><label for="lights-rarely">Rarely</label></div>
+      <label class="survey-question">6. How do you typically control your home temperature?</label>
+      <div class="option-row"><input type="radio" id="thermostat-smart" name="thermostat" value="smart" data-points="0"><label for="thermostat-smart">Smart thermostat with eco mode</label></div>
+      <div class="option-row"><input type="radio" id="thermostat-manual" name="thermostat" value="manual" data-points="1"><label for="thermostat-manual">Manual, but I’m energy conscious</label></div>
+      <div class="option-row"><input type="radio" id="thermostat-dont-think" name="thermostat" value="dont-think" data-points="2"><label for="thermostat-dont-think">I don’t think about it</label></div>
+      <h3>🍽️ Food & Diet</h3>
+      <label class="survey-question">7. How many meat-based meals do you eat per week?</label>
+      <div class="option-row"><input type="radio" id="meat-0-1" name="meat" value="0-1" data-points="0"><label for="meat-0-1">0–1 (vegetarian/vegan)</label></div>
+      <div class="option-row"><input type="radio" id="meat-2-5" name="meat" value="2-5" data-points="2"><label for="meat-2-5">2–5</label></div>
+      <div class="option-row"><input type="radio" id="meat-6-10" name="meat" value="6-10" data-points="4"><label for="meat-6-10">6–10</label></div>
+      <div class="option-row"><input type="radio" id="meat-10plus" name="meat" value="10+" data-points="6"><label for="meat-10plus">More than 10</label></div>
+      <label class="survey-question">8. How often do you eat locally produced or organic food?</label>
+      <div class="option-row"><input type="radio" id="localfood-most" name="localfood" value="most" data-points="0"><label for="localfood-most">Most of the time</label></div>
+      <div class="option-row"><input type="radio" id="localfood-occasionally" name="localfood" value="occasionally" data-points="1"><label for="localfood-occasionally">Occasionally</label></div>
+      <div class="option-row"><input type="radio" id="localfood-rarely" name="localfood" value="rarely" data-points="2"><label for="localfood-rarely">Rarely</label></div>
+      <label class="survey-question">9. How much food do you waste weekly?</label>
+      <div class="option-row"><input type="radio" id="foodwaste-little" name="foodwaste" value="little" data-points="0"><label for="foodwaste-little">Very little</label></div>
+      <div class="option-row"><input type="radio" id="foodwaste-moderate" name="foodwaste" value="moderate" data-points="2"><label for="foodwaste-moderate">A moderate amount</label></div>
+      <div class="option-row"><input type="radio" id="foodwaste-lot" name="foodwaste" value="lot" data-points="4"><label for="foodwaste-lot">A lot</label></div>
+      <h3>🛍️ Consumption & Waste</h3>
+      <label class="survey-question">10. How often do you buy new clothes?</label>
+      <div class="option-row"><input type="radio" id="clothes-less-month" name="clothes" value="less-month" data-points="0"><label for="clothes-less-month">Less than once a month</label></div>
+      <div class="option-row"><input type="radio" id="clothes-month" name="clothes" value="month" data-points="2"><label for="clothes-month">Once a month</label></div>
+      <div class="option-row"><input type="radio" id="clothes-week" name="clothes" value="week" data-points="4"><label for="clothes-week">Weekly</label></div>
+      <label class="survey-question">11. Do you recycle at home?</label>
+      <div class="option-row"><input type="radio" id="recycle-always" name="recycle" value="always" data-points="0"><label for="recycle-always">Always</label></div>
+      <div class="option-row"><input type="radio" id="recycle-sometimes" name="recycle" value="sometimes" data-points="1"><label for="recycle-sometimes">Sometimes</label></div>
+      <div class="option-row"><input type="radio" id="recycle-never" name="recycle" value="never" data-points="3"><label for="recycle-never">Never</label></div>
+      <label class="survey-question">12. How often do you use reusable bags, bottles, or containers?</label>
+      <div class="option-row"><input type="radio" id="reusable-always" name="reusable" value="always" data-points="0"><label for="reusable-always">Always</label></div>
+      <div class="option-row"><input type="radio" id="reusable-sometimes" name="reusable" value="sometimes" data-points="1"><label for="reusable-sometimes">Sometimes</label></div>
+      <div class="option-row"><input type="radio" id="reusable-rarely" name="reusable" value="rarely" data-points="2"><label for="reusable-rarely">Rarely</label></div>
+      <h3>💧 Water Use</h3>
+      <label class="survey-question">13. How long are your typical showers?</label>
+      <div class="option-row"><input type="radio" id="showers-less5" name="showers" value="less5" data-points="0"><label for="showers-less5">Less than 5 minutes</label></div>
+      <div class="option-row"><input type="radio" id="showers-5-10" name="showers" value="5-10" data-points="1"><label for="showers-5-10">5–10 minutes</label></div>
+      <div class="option-row"><input type="radio" id="showers-10plus" name="showers" value="10+" data-points="3"><label for="showers-10plus">More than 10 minutes</label></div>
+      <label class="survey-question">14. Do you turn off the tap while brushing your teeth?</label>
+      <div class="option-row"><input type="radio" id="tap-yes" name="tap" value="yes" data-points="0"><label for="tap-yes">Yes</label></div>
+      <div class="option-row"><input type="radio" id="tap-no" name="tap" value="no" data-points="2"><label for="tap-no">No</label></div>
+      <label class="survey-question">15. Do you use water-efficient appliances (e.g., toilets, washers)?</label>
+      <div class="option-row"><input type="radio" id="appliances-yes" name="appliances" value="yes" data-points="0"><label for="appliances-yes">Yes</label></div>
+      <div class="option-row"><input type="radio" id="appliances-not-sure" name="appliances" value="not-sure" data-points="1"><label for="appliances-not-sure">Not sure</label></div>
+      <div class="option-row"><input type="radio" id="appliances-no" name="appliances" value="no" data-points="2"><label for="appliances-no">No</label></div>
+      <br>
+      <div style="text-align: center; margin-top: 1rem;">
+      <button class="button" type="submit">Submit Survey</button>
+    </div>
+    </form>
+  </div>
+</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Ecometric. All rights reserved.</p>
+    <p>🌿 EcoMetric is dedicated to helping you understand and reduce your environmental impact. Join us in making a difference!</p>
+    <p>Built with ❤️ by Bhargav & Ananth</p>
+  </footer>
+<script>
+// Function to get the eco-message based on the score
+function getEcoMessage(score) {
+  if (score <= 10) {
+    return "🟢 <b>Eco Warrior</b> – Excellent habits: <br> Less than 3 tons CO₂e per year"
+  } else if (score <= 20) {
+    return "🟡 <b>Eco Conscious</b> – You're on the right track: <br> 3–5 tons CO₂e per year"
+  } else if (score <= 35) {
+    return "🟠 <b>Eco Learner</b> – Room for improvement: <br> 5-8 tons CO₂e per year"
+  } else {
+    return "🔴 <b>Eco Rethink</b> – Time to make changes: <br> 8+ tons CO₂e per year";
+  }
+}
+
+// Function to set the color of the score circle
+function setCircleColor(score) {
+  const circle = document.getElementById("scoreCircle");
+  if (score <= 10) {
+    circle.style.background = "linear-gradient(135deg, #1c8b47 60%, #b7e4c7 100%)"; // green
+  } else if (score <= 20) {
+    circle.style.background = "linear-gradient(135deg, #ffd600 60%, #fff9c4 100%)"; // yellow
+  } else if (score <= 35) {
+    circle.style.background = "linear-gradient(135deg, #ff9800 60%, #ffe0b2 100%)"; // orange
+  } else {
+    circle.style.background = "linear-gradient(135deg, #e53935 60%, #ffcdd2 100%)"; // red
+  }
+}
+
+// Function to update the eco-tips message based on the score
+function updateEcoTips(score) {
+  const ecoTipsSpan = document.getElementById('eco-tips');
+  if (score <= 10) {
+    ecoTipsSpan.innerHTML = '<b>Awesome! You’re leading a very sustainable lifestyle!</b>';
+    ecoTipsSpan.style.color = '#1c8b47'; // Green
+  } else if (score >= 11 && score <= 20) {
+    ecoTipsSpan.innerHTML = `<b>Great effort! A few mindful changes can make a big difference.</b>
+      <ul style="text-align:left; margin: 0.5em 0 0 1em;">
+        <li>Be conscious of your consumption habits.</li>
+        <li>Reduce unnecessary purchases and waste.</li>
+        <li>Support companies with sustainable practices.</li>
+        <li>Choose quality over quantity when shopping.</li>
+        <li>Make sustainability part of your routine.</li>
+      </ul>`;
+    ecoTipsSpan.style.color = '#f1c40f'; // Yellow
+  } else if (score >= 21 && score <= 35) {
+    ecoTipsSpan.innerHTML = `<b>You’re on your way — small changes can create lasting impact.</b>
+      <ul style="text-align:left; margin: 0.5em 0 0 1em;">
+        <li>Start tracking how you use energy and resources.</li>
+        <li>Look for ways to simplify and minimize waste.</li>
+        <li>Opt for reusable over disposable when possible.</li>
+        <li>Be intentional about transportation choices.</li>
+        <li>Incorporate sustainable habits gradually.</li>
+      </ul>`;
+    ecoTipsSpan.style.color = '#ff9800'; // Orange
+  } else {
+    ecoTipsSpan.innerHTML = `<b>Let’s take the first steps toward a more eco-conscious lifestyle.</b>
+      <ul style="text-align:left; margin: 0.5em 0 0 1em;">
+        <li>Learn how your daily choices affect the planet.</li>
+        <li>Set achievable sustainability goals.</li>
+        <li>Practice mindful consumption and reuse.</li>
+        <li>Find community programs or resources to help.</li>
+        <li>Start small — every step counts toward progress.</li>
+      </ul>`;
+    ecoTipsSpan.style.color = '#e74c3c'; // Red
+  }
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Function to get a cookie
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+// Event listener for form submission
+document.getElementById("ecoForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+  let totalPoints = 0;
+  const selectedInputs = document.querySelectorAll('input[type="radio"]:checked');
+  selectedInputs.forEach(input => {
+    const points = parseInt(input.getAttribute('data-points')) || 0;
+    totalPoints += points;
+  });
+
+  // Save the score to a cookie for 30 days
+  setCookie('ecoScore', totalPoints, 30);
+
+  // Update the circle text
+  document.getElementById("scoreCircle").childNodes[0].nodeValue = totalPoints + " ";
+  
+  // Update the left bubble popup with the score message
+  document.getElementById("bubblePopup").innerHTML = getEcoMessage(totalPoints);
+  
+  // Change the color of the circle
+  setCircleColor(totalPoints);
+
+  // Update eco tips
+  updateEcoTips(totalPoints);
+
+  // Scroll smoothly to the top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Set a default message and color on page load, and load score from cookie
+document.addEventListener("DOMContentLoaded", function() {
+  const savedScore = getCookie('ecoScore');
+  if (savedScore !== null && !isNaN(savedScore)) {
+    const parsedScore = parseInt(savedScore);
+    document.getElementById("scoreCircle").childNodes[0].nodeValue = parsedScore + " ";
+    document.getElementById("bubblePopup").innerHTML = getEcoMessage(parsedScore);
+    setCircleColor(parsedScore);
+    updateEcoTips(parsedScore);
+  } else {
+    // If no saved score, display default messages
+    document.getElementById("bubblePopup").innerHTML = "🌴 <b>Please Take Survey to Get Started</b>";
+    setCircleColor(0); // Set default color if no score
+    updateEcoTips(0); // Set default eco tips message
+  }
+
+  // Scroll to next question on radio select
+  document.querySelectorAll('#ecoForm input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      // Find the current option-row
+      const currentRow = this.closest('.option-row');
+      if (!currentRow) return;
+      // Find the next .survey-question label after this row
+      let next = currentRow.nextElementSibling;
+      while (next && !next.classList.contains('survey-question')) {
+        next = next.nextElementSibling;
+      }
+      if (next) {
+        // Scroll the next question label into view
+        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+});
+
+function displayUserName() {
+  // Try to get the name from sessionStorage first
+  let userName = sessionStorage.getItem("ecoUserName");
+
+  // If not in sessionStorage, try to read it from the cookie
+  if (!userName) {
+    const cookies = document.cookie.split("; ");
+    for (let i = 0; i < cookies.length; i++) {
+      const [key, value] = cookies[i].split("=");
+      if (key === "ecoUserName") {
+        userName = decodeURIComponent(value);
+        break;
+      }
+    }
+  }
+
+  // If we got a name, display it
+  if (userName) {
+    const welcomeEl = document.getElementById("welcomeMessage");
+    if (welcomeEl) {
+      welcomeEl.textContent = `Welcome ${userName}!`;
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
