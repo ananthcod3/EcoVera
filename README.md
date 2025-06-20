@@ -59,22 +59,8 @@ my-project
 
 ---
 
-## 🚀 Getting Started
+<pre lang="markdown"> ````markdown ## 🚀 Getting Started ### ⚙️ Prerequisites - Node.js (v14 or later) - npm (v6 or later) ### 💾 Installation Clone the repository and install dependencies: ```bash git clone https://github.com/your-username/ecovera.git cd ecovera npm install ``` ### ▶️ Usage After installing dependencies, start the development server: ```bash npm start ``` Open your browser and navigate to `http://localhost:3000` to explore the app. --- ## 🧪 Testing Run automated tests using: ```bash npm test ``` --- ## 🤝 Contributing Contributions are warmly welcomed! Whether you want to report bugs, suggest features, or submit code improvements, please open an issue or a pull request. Together, we can make EcoVera more powerful and accessible. 💚 --- ## 📄 License This project is licensed under the [MIT License](LICENSE). ⚖️ ```` </pre>
 
-### ⚙️ Prerequisites
 
-- Node.js (v14 or later)  
-- npm (v6 or later)
-
-### 💾 Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/your-username/ecovera.git
-cd ecovera
-npm install
-
-### Usage
 
 
