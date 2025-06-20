@@ -1,5 +1,13 @@
 # EcoVera
 
+# Table of Contents
+* Overview
+* Getting Started
+  * Prerequisites
+  * Installation
+  * Usage
+  * Testing
+    
 ## Overview
 EcoVera is an open-source platform that helps users track and reduce their environmental impact through an engaging web interface. It combines community awareness, educational content, and realtime impact metrics to foster sustainable habits. 
 
