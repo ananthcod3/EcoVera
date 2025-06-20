@@ -189,6 +189,47 @@
     }
   }
 </script>
+  <!-- Device Warning Popup -->
+<div id="devicePopup" style="
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: white;
+    padding: 2rem;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  ">
+    <p style="font-size: 1.1rem; color: #1c8b47;"><strong>Heads up!</strong></p>
+    <p style="margin-top: 0.5rem;">This site looks best on a computer.</p>
+    <button onclick="document.getElementById('devicePopup').style.display='none'" style="
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #1c8b47;
+      color: white;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    ">Got it!</button>
+  </div>
+</div>
+
+<script>
+  // Optional: hide on desktop
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth > 768) {
+      const popup = document.getElementById('devicePopup');
+      if (popup) popup.style.display = 'none';
+    }
+  });
+</script>
 </body>
 
 </html>
