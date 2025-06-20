@@ -1,5 +1,5 @@
 <h1 align="center">EcoVera</h1>
-<p><i>Empowering Sustainable Change Through Engaging Innovation</i></p>
+<p align="center"><i>Empowering Sustainable Change Through Engaging Innovation</i></p>
 
 ## Table of Contents
 * Overview
