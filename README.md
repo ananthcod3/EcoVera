@@ -1,4 +1,4 @@
-# EcoVera
+<h1 align="center">EcoVera</h1>
 
 ## Table of Contents
 * Overview
